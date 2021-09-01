@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="todo.css">
+  <title>ToDo list </title>
+</head>
+
+<body>
+<pre>
+    1. сделать ту-ду-лист с воддом даты с возожностью сортировки и очисткой сделанных заданий, поддержка мультилиста.
+    2.
+    класс создания листа и класс создания задания
+        при нажатии на кнопку добавить создаем новый экземпляр в зависимости от того где находимся.
+        Сначала сделать функциями
+    3. функции вывода по дедлайну
+    4. вывод  выполеных
+    git filter brunch
+    https://stackoverflow.com/questions/9971332/git-create-a-new-branch-with-only-a-specified-directory-and-its-history-then-pus
+    https://stackoverflow.com/questions/53224808/git-create-new-branch-in-new-folder
+
+
+</pre>
+  <div class="todo glass">
+    <div class="todo_header glass">
+      <h2>Welcome to Do!</h2>
+    </div>
+    <div class="todo_info"></div>
+    <div class="todo_addlist">
+        <select id="taskList"></select>
+        <input type="text" id="new-name">
+        <button id="addList">add</button>
+    </div>
+    <div class="todo_form">
+      <input type="date" step="1"> 
+      <textarea placeholder="Put task Text" maxlength="100"></textarea>
+      <button>ОК</button>
+    </div>
+    <div class="todo_list">
+      <h3>Tasks to Do</h3>
+      <div></div>
+      <button>Clear</button>
+    </div>
+  </div>
+
+  <script src="todo.js"></script>
+</body>
+
+</html>
