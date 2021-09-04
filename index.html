@@ -9,39 +9,80 @@
 </head>
 
 <body>
-<pre>
-    1. сделать ту-ду-лист с воддом даты с возожностью сортировки и очисткой сделанных заданий, поддержка мультилиста.
-    2.
+<!-- <pre class=glass>
+  !Убрать баг с undefined list
+    0. РАсписать возможности
+    1. Добавить возможность фильтровки:
+    - по дате - день, неделя, месяц.
+    - по выолению (выполненные, пропущенные)
+    - по алфавиту
+    2. Автоскрытие выполенных через 7 дней.
+    3. Дизайн - glassmorphism для:
+      полей и заданий. Кнопки непрозрачные.
+      Кнопка плюс, нажаие которой открывает форму добавления
+      Кнопка удаления листа
+    4. выводить количество задач и сделанных
+    5. дату сделать опциональной. Если есть - ок, нету false
+    
     класс создания листа и класс создания задания
         при нажатии на кнопку добавить создаем новый экземпляр в зависимости от того где находимся.
         Сначала сделать функциями
-    3. функции вывода по дедлайну
-    4. вывод  выполеных
-    git filter brunch
-    https://stackoverflow.com/questions/9971332/git-create-a-new-branch-with-only-a-specified-directory-and-its-history-then-pus
-    https://stackoverflow.com/questions/53224808/git-create-new-branch-in-new-folder
+    
 
-
-</pre>
+</pre> -->
   <div class="todo glass">
     <div class="todo_header glass">
       <h2>Welcome to Do!</h2>
     </div>
     <div class="todo_info"></div>
+    
     <div class="todo_addlist">
-        <select id="taskList"></select>
-        <input type="text" id="new-name">
-        <button id="addList">add</button>
+        <span>List: </span>
+        <select id="taskList">
+          <option diabled selected value="">--select</option>
+        </select>
+        <button  onclick="removeEl()" onclick="alert(event.target)" style="    border-radius: 0;    border: 1px solid #e8dddd;    border-top: 0;
+    border-bottom: 0;    padding: 3px;"  id="delList"  >×</button>
+        <input type="text" id="listName" placeholder="Put new List name" data-width="200px" style="width:0px; opacity:0">
+        <button id="addList" name="expand">➕</button>
     </div>
     <div class="todo_form">
-      <input type="date" step="1"> 
-      <textarea placeholder="Put task Text" maxlength="100"></textarea>
-      <button>ОК</button>
+      <span>Task: </span>
+      
+      <!-- <button name="expand" id="calendar" style="display:none">C</button> -->
+      <input type="text" id="taskName" placeholder="Put task name" data-width="200px" style="width:0px; opacity:0; padding-left:0px"> 
+      <img src="calendar.png" id="calendarImg" style="height:32px; display:none">
+      <input type="date" step="1" data-width="100px" style="width:0px; opacity:0" id="calendar"  pattern="\d{2}-\d{2}-\d{2}">
+      <button id="addTask" name="expand">➕</button>
     </div>
+    <div class="todo_sort glass"><span>Tasks to Do</span>
+      
+    <label>Sort by:
+      <select id="sortNodes">
+        <option>default</option>
+        <option>name</option>
+        <option>completence</option>
+        <option>date</option>
+      </select>
+    </label>
+    <label>Show:
+      <select id="showNodes">
+      <option>all</option>
+      <option>today</option>
+      <option>tomorrow</option>
+      <option>week</option>
+      <option>endless</option>
+      <option>completed</option>
+      <option>uncompleted</option>
+      <option>missed</option>
+    </select>
+  </label>
+  </div>
     <div class="todo_list">
-      <h3>Tasks to Do</h3>
-      <div></div>
-      <button>Clear</button>
+      
+   
+      <div id="tasks"></div>
+      
     </div>
   </div>
 
