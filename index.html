@@ -9,7 +9,68 @@
 </head>
 
 <body>
-<!-- <pre class=glass>
+  
+  <div class="todo glass">
+    <div class="todo_header glass">
+      <h2>Welcome to Do!</h2>
+    </div>
+    <div class="todo_info"></div>
+
+    <div class="todo_addlist">
+      <span>List: </span>
+      <select id="taskList">
+        <option diabled selected value="">--select</option>
+      </select>
+      <button id="delList">×</button>
+      <input type="text" id="listName" placeholder="Put new List name" data-width="200px" style="width:0px; opacity:0">
+      <button id="addList" name="expand">➕</button>
+    </div>
+    <div class="todo_form">
+      <span>Task: </span>
+
+      <!-- <button name="expand" id="calendar" style="display:none">C</button> -->
+      <input type="text" id="taskName" placeholder="Put task name" data-width="200px"
+        style="width:0px; opacity:0; padding-left:0px">
+      <img src="calendar.png" id="calendarImg" style="height:32px; display:none">
+      <input type="date" step="1" data-width="100px" style="width:0px; opacity:0" id="calendar"
+        pattern="\d{2}-\d{2}-\d{2}">
+      <button id="addTask" name="expand">➕</button>
+    </div>
+    <div class="todo_sort glass"><span>Tasks to Do</span>
+
+      <label>Sort by:
+        <select id="sortNodes">
+          <option>default</option>
+          <option>name</option>
+          <option>completence</option>
+          <option>date</option>
+        </select>
+      </label>
+      <label>Show:
+        <select id="showNodes">
+          <option>all</option>
+          <option>today</option>
+          <option>tomorrow</option>
+          <option>week</option>
+          <option>endless</option>
+          <option>completed</option>
+          <option>uncompleted</option>
+          <option>missed</option>
+        </select>
+      </label>
+    </div>
+    <div class="todo_list">
+
+
+      <div id="tasks"></div>
+
+    </div>
+  </div>
+
+  <script src="todo.js"></script>
+
+
+  <!-- <pre class=glass>
   !Убрать баг с undefined list
     0. РАсписать возможности
     1. Добавить возможность фильтровки:
@@ -30,62 +91,6 @@
     
 
 </pre> -->
-  <div class="todo glass">
-    <div class="todo_header glass">
-      <h2>Welcome to Do!</h2>
-    </div>
-    <div class="todo_info"></div>
-    
-    <div class="todo_addlist">
-        <span>List: </span>
-        <select id="taskList">
-          <option diabled selected value="">--select</option>
-        </select>
-        <button  id="delList"  >×</button>
-        <input type="text" id="listName" placeholder="Put new List name" data-width="200px" style="width:0px; opacity:0">
-        <button id="addList" name="expand">➕</button>
-    </div>
-    <div class="todo_form">
-      <span>Task: </span>
-      
-      <!-- <button name="expand" id="calendar" style="display:none">C</button> -->
-      <input type="text" id="taskName" placeholder="Put task name" data-width="200px" style="width:0px; opacity:0; padding-left:0px"> 
-      <img src="calendar.png" id="calendarImg" style="height:32px; display:none">
-      <input type="date" step="1" data-width="100px" style="width:0px; opacity:0" id="calendar"  pattern="\d{2}-\d{2}-\d{2}">
-      <button id="addTask" name="expand">➕</button>
-    </div>
-    <div class="todo_sort glass"><span>Tasks to Do</span>
-      
-    <label>Sort by:
-      <select id="sortNodes">
-        <option>default</option>
-        <option>name</option>
-        <option>completence</option>
-        <option>date</option>
-      </select>
-    </label>
-    <label>Show:
-      <select id="showNodes">
-      <option>all</option>
-      <option>today</option>
-      <option>tomorrow</option>
-      <option>week</option>
-      <option>endless</option>
-      <option>completed</option>
-      <option>uncompleted</option>
-      <option>missed</option>
-    </select>
-  </label>
-  </div>
-    <div class="todo_list">
-      
-   
-      <div id="tasks"></div>
-      
-    </div>
-  </div>
-
-  <script src="todo.js"></script>
 </body>
 
 </html>
