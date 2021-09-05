@@ -1,4 +1,4 @@
-let listSelect = document.getElementById('taskList');//this variable is often used
+let listSelect = document.getElementById('taskList'); //this variable is often used
 //create lists from localstorage
 for (let key of Object.keys(localStorage)) {
     createList(key);
@@ -30,7 +30,7 @@ function newId(id) {
  * ListSelect is gloabal variable that represents SELECT node with list names.
  * @param {*} id - list name
  */
- function createList(id) {
+function createList(id) {
     let option = document.createElement('option');
     option.textContent = id;
     listSelect.prepend(option);
@@ -44,8 +44,8 @@ function newId(id) {
  * @callback showOneTask
  */
 function newTask(id, name, date) {
-    let newData,prevData,index; // index  - is main variable that make relations between localstorage and DOM elements. Used in delete and add functions.
-    
+    let newData, prevData, index; // index  - is main variable that make relations between localstorage and DOM elements. Used in delete and add functions.
+
     if (id == "" || !id) { //if user didn't select active list
         id = "default";
         if (localStorage.length == 0 || !localStorage.getItem(id)) newId(id); //if user didn't create any list - make @default list
@@ -60,9 +60,9 @@ function newTask(id, name, date) {
     if (localStorage.getItem(id) && localStorage.getItem(id).length > 0) {
         prevData = JSON.parse(localStorage.getItem(id));
         index = prevData.length; // get number of arr obj to assign it to delete button
-    }else{
+    } else {
         prevData = [];
-        index = 0; 
+        index = 0;
     }
     prevData.push(newData);
     localStorage.setItem(id, JSON.stringify(prevData))
@@ -108,7 +108,7 @@ function showTasks(id, iterrate = "some") {
         return;
     }
     //if (!Number(iterrate)) document.querySelector('.todo_sort').hidden = false; //!bug if show all tasks in lists and last list is empty
-        
+
     //filter array of objects in localstprage if there are empty elements after delete method (removeEl). Than index (variable) won't count empty elements
     let tasksList = JSON.parse(localStorage.getItem(id));
     if (tasksList.includes(null) || tasksList.includes(undefined)) {
@@ -217,7 +217,7 @@ document.getElementById('addTask').addEventListener('click',
 /**
  * Listen to click on SHOW CALENDAR Image id=#calendarImg 
  */
- document.getElementById('calendarImg').addEventListener('click', (e) => {
+document.getElementById('calendarImg').addEventListener('click', (e) => {
     let neighbour = e.target.nextElementSibling
     if (neighbour.style.width == "0px") {
         neighbour.style.opacity = "1";
