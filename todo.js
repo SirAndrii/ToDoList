@@ -16,7 +16,7 @@ if (listSelect.value == "") {
  */
 function newId(id) {
     if (id in localStorage) {
-        infoMessage("This list has been added to storage already. Use another name.");
+        new InfoMessage("This list has been added to storage already. Use another name.");
         return;
     }
     localStorage.setItem(id, ""); //create new id in localStorage
@@ -209,7 +209,7 @@ document.getElementById('addTask').addEventListener('click',
             let message = document.querySelector('.todo_form input[type="text"]').value
             if (!date) {
                 date = false;
-                InfoMessage("Your task was marked as endLess").ok; //if date is empty - set the endless date
+                new InfoMessage("Your task was marked as endLess").ok; //if date is empty - set the endless date
             }
             newTask(idName, message, date)
         }
