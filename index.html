@@ -75,7 +75,7 @@
      */
     if (localStorage.length === 0) {
       document.body.insertAdjacentHTML('beforeend',
-        '<button onclick="insertDemo ()">insert Demo Data to localstorage</button>');
+        '<button onclick="insertDemo()">insert Demo Data to localstorage</button>');
     }
    
     /* copy('var data = '+JSON.stringify(localStorage)+';Object.keys(data).forEach(function (k){localStorage.setItem(k, data[k]);});'); */
@@ -86,10 +86,7 @@
       "methods": "[{\"name\":\"Sort by date\",\"date\":null,\"completed\":false},{\"name\":\"Hide completed\",\"date\":null,\"completed\":false},{\"name\":\"sort by complete\",\"date\":null,\"completed\":false},{\"name\":\"remove list\",\"date\":null,\"completed\":true},{\"name\":\"Date optional\",\"date\":null,\"completed\":true},{\"name\":\"show task after add\",\"date\":null,\"completed\":true},null]",
       "default": "[{\"name\":\"add task\",\"date\":null,\"completed\":false},{\"name\":\"test\",\"date\":false,\"completed\":false},{\"name\":\"test undefined Bug\",\"date\":false,\"completed\":false}]"
     };
-    Object.keys(data).forEach(function (k) {
-      localStorage.setItem(k, data[k]);
-    });
-
+  
     function insertDemo() {
       let data = JSON.parse(testTODO);
       Object.keys(data).forEach(function (k) {
