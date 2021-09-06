@@ -2,6 +2,8 @@
 Beatiful ToDo tasker writed on JS for summer SoftServe JS Core courses. Used glassmorphism design.
 ![alt text](https://github.com/SirAndrii/ToDoList/blob/44cf8708b99f143d78a4b4e8bc1952b7ed3701d1/demo2.jpg)
 
+## DEMO: https://sirandrii.github.io/ToDoList/
+
 ## What it can do
  - creates new list and immediatly change DOM to show it
  - abbility to delete one task or whole list.
